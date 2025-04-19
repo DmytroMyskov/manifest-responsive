@@ -22,6 +22,12 @@ html {
   margin: 0 auto;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 h1 {
   position: absolute;
   width: 1px;
@@ -34,47 +40,38 @@ h1 {
   border: 0;
 }
 
+:link,
+:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header .container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 38px 0;
+  gap: 84px;
   font-size: 14px;
   font-weight: 400;
   color: #000000;
   text-transform: uppercase;
   letter-spacing: 0.3em;
 
-  nav,
-  ul {
-    display: flex;
-    align-items: center;
-  }
-
   nav {
-    gap: 428px;
+    display: contents;
 
-    div {
-      gap: 84px;
-
-      a {
-        text-decoration: none;
-      }
-
-      a:hover {
-        border-bottom: 1px solid #000000;
-      }
-
-      a:visited {
-        color: #000000;
-      }
+    .logo {
+      margin-right: auto;
     }
 
     ul {
+      display: flex;
       gap: 42px;
 
       li {
-        list-style: none;
+        a:hover {
+          border-bottom: 1px solid #000000;
+        }
       }
     }
   }
@@ -87,9 +84,9 @@ h1 {
 }
 
 .hero {
-  background-image: url(images/hero.jpg);
+  background-image: url(images/hero.png);
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
   height: 600px;
 
@@ -105,13 +102,73 @@ h1 {
   h2 {
     max-width: 770px;
     position: absolute;
-    top: 100px;
+    top: 40px;
     left: 0;
     font-family: var(--secondary-font);
     font-weight: 600;
     font-size: 48px;
     color: #000;
-    letter-spacing: 0.05em;
     line-height: 64px;
   }
 }
+
+.blog .container {
+  margin-block: 90px;
+
+  >div {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+
+    &:last-child {
+      flex-direction: row-reverse;
+    }
+  }
+
+  h2 {
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    font-size: 48px;
+    color: #000000;
+    line-height: 64px;
+  }
+
+  .content {
+    padding: 85px 120px 85px 0;
+  }
+
+  .blog-content {
+    padding: 85px 0 85px 120px;
+  }
+
+  .content,
+  .blog-content {
+
+    span,
+    b {
+      font-size: 16px;
+      font-weight: 400;
+      color: #7B7B7B;
+      letter-spacing: 0.1em;
+    }
+
+    h3 {
+      font-family: var(--secondary-font);
+      font-weight: 500;
+      font-size: 23px;
+      color: #000000;
+      letter-spacing: 0.1em;
+      padding-block: 30px 15px;
+    }
+
+    a {
+      display: flex;
+      font-size: 16px;
+      font-weight: 400;
+      padding-top: 50px;
+
+      p {
+        display: flex;
+      }
+    }
+  }
