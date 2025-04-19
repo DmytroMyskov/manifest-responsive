@@ -17,6 +17,18 @@ html {
   letter-spacing: 0.05em;
 }
 
+h2,
+h3 {
+  font-family: var(--secondary-font);
+  color: #000000;
+}
+
+.blog .container,
+.latest-posts .container,
+.popular .container {
+  margin-block: 90px;
+}
+
 .container {
   width: 1170px;
   margin: 0 auto;
@@ -104,7 +116,6 @@ h1 {
     position: absolute;
     top: 40px;
     left: 0;
-    font-family: var(--secondary-font);
     font-weight: 600;
     font-size: 48px;
     color: #000;
@@ -113,7 +124,6 @@ h1 {
 }
 
 .blog .container {
-  margin-block: 90px;
 
   >div {
     display: flex;
@@ -126,7 +136,6 @@ h1 {
   }
 
   h2 {
-    font-family: var(--secondary-font);
     font-weight: 400;
     font-size: 48px;
     color: #000000;
@@ -153,10 +162,10 @@ h1 {
     }
 
     h3 {
-      font-family: var(--secondary-font);
+
       font-weight: 500;
       font-size: 23px;
-      color: #000000;
+
       letter-spacing: 0.1em;
       padding-block: 30px 15px;
     }
@@ -172,3 +181,97 @@ h1 {
       }
     }
   }
+}
+
+.latest-posts .container,
+.popular .container {
+
+  header {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+    }
+
+    a {
+      display: inline-flex;
+      gap: 20px;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: #7B7B7B;
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+
+      div {
+        display: inline-flex;
+        justify-content: space-between;
+
+        span {
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+          color: #7B7B7B;
+        }
+
+        h3 {
+          font-size: 22px;
+          font-weight: 500;
+          letter-spacing: 0.1em;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+  }
+}
+
+.popular .container {
+
+  ul {
+    li {
+      gap: 20px;
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  button {
+    width: 180px;
+    height: 46px;
+    margin: 50px 495px 0;
+    font-family: var(--primary-font);
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.1em;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #fff;
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
+    }
+  }
+}
