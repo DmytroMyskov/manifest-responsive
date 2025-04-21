@@ -25,7 +25,8 @@ h3 {
 
 .blog .container,
 .latest-posts .container,
-.popular .container {
+.popular .container,
+.info .container {
   margin-block: 90px;
 }
 
@@ -273,5 +274,35 @@ h1 {
       color: var(--primary-color);
       border: 1px solid var(--primary-color);
     }
+  }
+}
+
+.info .container {
+  display: flex;
+  justify-content: space-between;
+
+
+  div {
+    width: 470px;
+  }
+
+  div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  h3 {
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    line-height: 166%;
+  }
+
+  p {
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 32px;
   }
 }
