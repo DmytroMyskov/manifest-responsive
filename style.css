@@ -273,6 +273,7 @@ h1 {
       background-color: #fff;
       color: var(--primary-color);
       border: 1px solid var(--primary-color);
+      transition: 0.3s;
     }
   }
 }
@@ -302,7 +303,70 @@ h1 {
   p {
     font-size: 19px;
     font-weight: 400;
-    letter-spacing: 0.05em;
     line-height: 32px;
+  }
+}
+
+footer .container {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  h3 {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    margin-bottom: 30px;
+  }
+
+  a {
+    color: #000000;
+  }
+
+  p {
+    margin-block: 20px 30px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: #000;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    gap: 23px;
+    align-items: center;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--primary-color);
+    background-color: #fff;
+    font-size: small;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--primary-color);
+      border: none;
+      transition: 0.3s;
+
+      & svg {
+        [fill="#565656"] {
+          fill: #fff;
+        }
+      }
+    }
   }
 }
