@@ -70,12 +70,13 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.3em;
 
+  .logo {
+    margin-right: auto;
+  }
+
   nav {
     display: contents;
 
-    .logo {
-      margin-right: auto;
-    }
 
     ul {
       display: flex;
@@ -93,6 +94,13 @@ h1 {
     border: none;
     background-color: transparent;
     cursor: pointer;
+  }
+
+  .burger {
+    width: 34px;
+    height: 22px;
+    background-image: repeating-linear-gradient(black 0, black 2px, transparent 2px, transparent 10px);
+    display: none;
   }
 }
 
@@ -366,6 +374,116 @@ footer .container {
         [fill="#565656"] {
           fill: #fff;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: unset;
+    padding: 0 34px;
+  }
+
+  .header .container {
+    position: relative;
+
+    :not(:checked)+nav {
+      display: none;
+    }
+
+    nav {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: #fff;
+
+      ul {
+        display: unset;
+      }
+    }
+
+    .burger {
+      display: unset;
+    }
+
+    :checked~.burger {
+      background-image: unset;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%) rotate(-32deg);
+      }
+
+      &::after {
+        rotate: 32deg;
+      }
+    }
+  }
+
+  .blog .container {
+    >div {
+      gap: 20px;
+
+      >* {
+        width: calc(50% - 10px);
+      }
+    }
+  }
+
+  .latest-posts .container {
+    ul {
+      display: unset;
+
+      li {
+        display: flex;
+
+        &:nth-child(2n) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  }
+
+  .popular .container {
+    ul {
+      gap: 20px;
+
+      li {
+        width: calc(50% - 10px);
+
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .info .container {
+    display: grid;
+
+    >:last-child {
+      text-align: right;
+    }
+  }
+
+  footer .container {
+    >div {
+      display: unset;
+      text-align: center;
+
+      ul {
+        justify-content: center;
       }
     }
   }
