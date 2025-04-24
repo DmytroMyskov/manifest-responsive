@@ -31,14 +31,8 @@ h3 {
 }
 
 .container {
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 h1 {
@@ -51,6 +45,12 @@ h1 {
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 :link,
@@ -75,8 +75,6 @@ h1 {
   }
 
   nav {
-    display: contents;
-
 
     ul {
       display: flex;
@@ -97,10 +95,49 @@ h1 {
   }
 
   .burger {
-    width: 34px;
-    height: 22px;
-    background-image: repeating-linear-gradient(black 0, black 2px, transparent 2px, transparent 10px);
     display: none;
+    width: 32px;
+    height: 25px;
+    background-color: black;
+    transition: filter 0.3s;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 5px;
+      background-color: white;
+      translate: 0 5px;
+      transition: rotate 0.3s, translate 0.3s;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 32px;
+      height: 5px;
+      background-color: white;
+      translate: 0 10px;
+      transition: rotate 0.3s, translate 0.3s;
+    }
+  }
+
+  #burger {
+    display: none;
+
+    &:checked~.burger {
+      filter: invert(1);
+
+      &::before {
+        rotate: 392deg;
+        translate: 0 10px;
+      }
+
+      &::after {
+        rotate: -392deg;
+        translate: 0 5px;
+      }
+    }
   }
 }
 
@@ -404,29 +441,7 @@ footer .container {
     }
 
     .burger {
-      display: unset;
-    }
-
-    :checked~.burger {
-      background-image: unset;
-      position: relative;
-
-      &::before,
-      &::after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: var(--primary-color);
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%) rotate(-32deg);
-      }
-
-      &::after {
-        rotate: 32deg;
-      }
+      display: block;
     }
   }
 
