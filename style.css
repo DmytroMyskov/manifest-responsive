@@ -96,29 +96,35 @@ ul {
 
   .burger {
     display: none;
-    width: 32px;
-    height: 25px;
+    width: 34px;
+    height: 20px;
     background-color: black;
     transition: filter 0.3s;
+
+    &:hover {
+      filter: invert(1);
+      transition: filter 0.3s;
+      cursor: pointer;
+    }
 
     &::before {
       content: "";
       display: block;
-      width: 32px;
+      width: 34px;
       height: 5px;
       background-color: white;
-      translate: 0 5px;
-      transition: rotate 0.3s, translate 0.3s;
+      translate: 0 3px;
+      transition: rotate 0.5s, translate 0.5s;
     }
 
     &::after {
       content: "";
       display: block;
-      width: 32px;
+      width: 34px;
       height: 5px;
       background-color: white;
-      translate: 0 10px;
-      transition: rotate 0.3s, translate 0.3s;
+      translate: 0 7px;
+      transition: rotate 0.5s, translate 0.5s;
     }
   }
 
@@ -129,13 +135,13 @@ ul {
       filter: invert(1);
 
       &::before {
-        rotate: 392deg;
-        translate: 0 10px;
+        rotate: 30deg;
+        translate: 0 8px;
       }
 
       &::after {
-        rotate: -392deg;
-        translate: 0 5px;
+        rotate: -30deg;
+        translate: 0 3px;
       }
     }
   }
@@ -416,14 +422,15 @@ footer .container {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .container {
     max-width: unset;
-    padding: 0 34px;
+    padding-inline: 34px;
   }
 
   .header .container {
     position: relative;
+    padding-inline: 34px;
 
     :not(:checked)+nav {
       display: none;
@@ -434,14 +441,36 @@ footer .container {
       top: 100%;
       right: 0;
       background: #fff;
+      width: 230px;
+      height: 66vh;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
 
       ul {
-        display: unset;
+        padding-block: 16vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 44px;
+
+        li {
+          font-size: 20px;
+        }
+
+        & a:hover {
+          border-bottom: 1px solid #000000;
+        }
       }
     }
 
     .burger {
       display: block;
+    }
+  }
+
+  .hero .container {
+    h2 {
+      padding-inline: 34px;
     }
   }
 
@@ -475,7 +504,6 @@ footer .container {
 
       li {
         width: calc(50% - 10px);
-
 
         img {
           width: 100%;
