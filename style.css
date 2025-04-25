@@ -437,6 +437,13 @@ footer .container {
     position: relative;
     padding-inline: 34px;
 
+    button {
+      img {
+        width: 22px;
+        height: 22px;
+      }
+    }
+
     :not(:checked)+nav {
       display: none;
     }
@@ -590,25 +597,128 @@ footer .container {
   }
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .container {
-    padding-inline: 10px;
+    padding-inline: 20px;
   }
 
   .header .container {
-    padding-inline: 10px;
+    padding-inline: 20px;
 
     button {
       img {
-        width: 20px;
-        height: 20px;
+        width: 25px;
+        height: 25px;
       }
     }
   }
 
   .hero .container {
     h2 {
-      padding-inline: 10px;
+      padding-inline: 20px;
     }
   }
-} */
+
+  .blog .container {
+
+    div {
+      display: flex;
+      flex-direction: column-reverse;
+
+      >* {
+        width: 100%;
+      }
+
+      img {
+        object-fit: cover;
+        align-self: stretch;
+      }
+
+      &:last-child {
+        flex-direction: column-reverse;
+      }
+    }
+
+    .content {
+
+      &:last-child {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .latest-posts .container {
+    ul {
+      gap: 50px;
+
+      li {
+        flex-direction: column;
+
+        >* {
+          width: 100%;
+        }
+
+        &:nth-child(2n) {
+          flex-direction: column;
+        }
+
+        .content {
+          div {
+            display: flex;
+            flex-direction: row;
+          }
+        }
+      }
+    }
+  }
+
+  .popular .container {
+    ul {
+      flex-direction: column;
+      gap: 50px;
+
+      li {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 460px) {
+    .container {
+      padding-inline: 10px;
+    }
+
+    .header .container {
+      padding-inline: 10px;
+
+      button {
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    .hero .container {
+      h2 {
+        padding-inline: 10px;
+      }
+    }
+
+    .blog .container {
+
+      div {
+        display: flex;
+        flex-direction: column-reverse;
+
+        >* {
+          width: 100%;
+        }
+
+        img {
+          object-fit: cover;
+          align-self: stretch;
+        }
+      }
+    }
+  }
