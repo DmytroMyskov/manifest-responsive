@@ -102,7 +102,6 @@ ul {
     transition: filter 0.3s;
 
     &:hover {
-      filter: invert(1);
       transition: filter 0.3s;
       cursor: pointer;
     }
@@ -268,27 +267,29 @@ ul {
       flex-direction: column;
       gap: 25px;
 
-      div {
-        display: inline-flex;
-        justify-content: space-between;
+      .content {
+        div {
+          display: inline-flex;
+          justify-content: space-between;
 
-        span {
-          font-size: 12px;
-          font-weight: 400;
-          letter-spacing: 0.1em;
-          color: #7B7B7B;
-        }
+          span {
+            font-size: 12px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: #7B7B7B;
+          }
 
-        h3 {
-          font-size: 22px;
-          font-weight: 500;
-          letter-spacing: 0.1em;
-        }
+          h3 {
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+          }
 
-        p {
-          font-size: 16px;
-          font-weight: 400;
-          letter-spacing: 0.1em;
+          p {
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+          }
         }
       }
     }
@@ -310,7 +311,7 @@ ul {
   button {
     width: 180px;
     height: 46px;
-    margin: 50px 495px 0;
+    margin: 50px auto 0;
     font-family: var(--primary-font);
     font-size: 16px;
     font-weight: 700;
@@ -319,6 +320,7 @@ ul {
     background-color: var(--primary-color);
     border: none;
     cursor: pointer;
+    display: block;
 
     &:hover {
       background-color: #fff;
@@ -356,6 +358,10 @@ ul {
     font-weight: 400;
     line-height: 32px;
   }
+}
+
+footer {
+  background-color: #F4F4F4;
 }
 
 footer .container {
@@ -422,9 +428,8 @@ footer .container {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1185px) {
   .container {
-    max-width: unset;
     padding-inline: 34px;
   }
 
@@ -477,19 +482,47 @@ footer .container {
   .blog .container {
     >div {
       gap: 20px;
+      align-items: center;
 
       >* {
         width: calc(50% - 10px);
+      }
+
+      img {
+        object-fit: cover;
+        align-self: stretch;
+      }
+
+      .content {
+        padding: 0;
       }
     }
   }
 
   .latest-posts .container {
     ul {
-      display: unset;
+      display: flex;
+      gap: 30px;
+      margin-top: 50px;
+      flex-direction: column;
 
       li {
         display: flex;
+        flex-direction: row;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          h3 {
+            font-size: 22px;
+          }
+        }
+
+        >* {
+          width: calc(50% - 10px);
+        }
 
         &:nth-child(2n) {
           flex-direction: row-reverse;
@@ -508,12 +541,32 @@ footer .container {
         img {
           width: 100%;
         }
+
+        div {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        p {
+          text-align: justify;
+        }
       }
     }
   }
 
   .info .container {
     display: grid;
+    grid-template-columns: 100%;
+    margin-block: 70px 90px;
+
+    div {
+      width: unset;
+
+      p {
+        max-width: 628px;
+        margin-left: auto;
+      }
+    }
 
     >:last-child {
       text-align: right;
@@ -521,9 +574,14 @@ footer .container {
   }
 
   footer .container {
+    margin-top: 70px;
+    padding-top: 50px;
+
     >div {
-      display: unset;
+      display: flex;
       text-align: center;
+      flex-direction: column;
+      gap: 40px;
 
       ul {
         justify-content: center;
@@ -531,3 +589,26 @@ footer .container {
     }
   }
 }
+
+/* @media (max-width: 768px) {
+  .container {
+    padding-inline: 10px;
+  }
+
+  .header .container {
+    padding-inline: 10px;
+
+    button {
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .hero .container {
+    h2 {
+      padding-inline: 10px;
+    }
+  }
+} */
