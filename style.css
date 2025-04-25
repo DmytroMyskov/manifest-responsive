@@ -605,103 +605,25 @@ footer .container {
   .header .container {
     padding-inline: 20px;
 
-    button {
-      img {
-        width: 25px;
-        height: 25px;
+    nav {
+      width: 200px;
+      height: 46vh;
+
+      ul {
+        padding-block: 6vh;
       }
-    }
-  }
-
-  .hero .container {
-    h2 {
-      padding-inline: 20px;
-    }
-  }
-
-  .blog .container {
-
-    div {
-      display: flex;
-      flex-direction: column-reverse;
-
-      >* {
-        width: 100%;
-      }
-
-      img {
-        object-fit: cover;
-        align-self: stretch;
-      }
-
-      &:last-child {
-        flex-direction: column-reverse;
-      }
-    }
-
-    .content {
-
-      &:last-child {
-        flex-direction: column;
-      }
-    }
-  }
-
-  .latest-posts .container {
-    ul {
-      gap: 50px;
-
-      li {
-        flex-direction: column;
-
-        >* {
-          width: 100%;
-        }
-
-        &:nth-child(2n) {
-          flex-direction: column;
-        }
-
-        .content {
-          div {
-            display: flex;
-            flex-direction: row;
-          }
-        }
-      }
-    }
-  }
-
-  .popular .container {
-    ul {
-      flex-direction: column;
-      gap: 50px;
-
-      li {
-        width: 100%;
-      }
-    }
-  }
-
-  @media (max-width: 460px) {
-    .container {
-      padding-inline: 10px;
-    }
-
-    .header .container {
-      padding-inline: 10px;
 
       button {
         img {
-          width: 20px;
-          height: 20px;
+          width: 25px;
+          height: 25px;
         }
       }
     }
 
     .hero .container {
       h2 {
-        padding-inline: 10px;
+        padding-inline: 20px;
       }
     }
 
@@ -719,6 +641,220 @@ footer .container {
           object-fit: cover;
           align-self: stretch;
         }
+
+        &:last-child {
+          flex-direction: column-reverse;
+        }
+      }
+
+      .content {
+
+        &:last-child {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .latest-posts .container {
+      ul {
+        gap: 50px;
+
+        li {
+          flex-direction: column;
+
+          >* {
+            width: 100%;
+          }
+
+          &:nth-child(2n) {
+            flex-direction: column;
+          }
+
+          .content {
+            div {
+              display: flex;
+              flex-direction: row;
+            }
+          }
+        }
+      }
+    }
+
+    .popular .container {
+      ul {
+        flex-direction: column;
+        gap: 50px;
+
+        li {
+          width: 100%;
+        }
       }
     }
   }
+}
+
+@media (max-width: 460px) {
+  .container {
+    padding-inline: 10px;
+  }
+
+  .blog .container,
+  .latest-posts .container,
+  .popular .container,
+  .info .container {
+    margin-block: 70px;
+  }
+
+  .header .container {
+    padding-inline: 10px;
+
+    nav {
+      width: 180px;
+      height: 36vh;
+
+      ul {
+        padding-block: 1vh;
+      }
+    }
+
+    button {
+      img {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  .hero .container {
+    h2 {
+      padding-inline: 10px;
+    }
+  }
+
+  .blog .container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    h2 {
+      text-align: center;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column-reverse;
+      margin: 0;
+
+      >* {
+        width: 100%;
+      }
+
+      img {
+        object-fit: cover;
+        align-self: stretch;
+      }
+
+      &:last-child {
+        flex-direction: column-reverse;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .latest-posts .container {
+
+    header {
+      display: block;
+
+      a {
+        padding-block: 10px 20px;
+      }
+    }
+
+    ul {
+      margin: 0;
+      gap: 50px;
+
+      li {
+        flex-direction: column;
+
+        >* {
+          width: 100%;
+        }
+
+        &:nth-child(2n) {
+          flex-direction: column;
+        }
+
+        .content {
+          div {
+            display: flex;
+            flex-direction: row;
+
+            span {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .popular .container {
+
+    header {
+      display: block;
+
+      a {
+        padding-block: 10px 20px;
+      }
+    }
+
+    ul {
+      margin: 0;
+      gap: 50px;
+      flex-direction: column;
+
+      li {
+        width: 100%;
+
+        div {
+          span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .info .container {
+    >:last-child {
+      text-align: left;
+    }
+
+    div {
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+
+  footer .container {
+    div {
+      gap: 20px;
+
+      h3 {
+        font-size: 32px;
+        margin: 0;
+      }
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
