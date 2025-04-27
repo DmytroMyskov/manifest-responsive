@@ -428,7 +428,7 @@ footer .container {
   }
 }
 
-@media (max-width: 1185px) {
+@media (max-width: 1250px) {
   .container {
     padding-inline: 34px;
   }
